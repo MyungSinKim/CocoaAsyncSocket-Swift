@@ -16,6 +16,9 @@
 		B7BF322C1D63078F007846A4 /* CocoaAsyncSocket_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF322B1D63078F007846A4 /* CocoaAsyncSocket_SwiftTests.swift */; };
 		B7BF32371D63078F007846A4 /* CocoaAsyncSocket_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF32361D63078F007846A4 /* CocoaAsyncSocket_SwiftUITests.swift */; };
 		B7BF32451D6313B0007846A4 /* ClientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF32441D6313B0007846A4 /* ClientVC.swift */; };
+		B7BF328B1D64572F007846A4 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BF32881D64572F007846A4 /* AsyncSocket.m */; };
+		B7BF328C1D64572F007846A4 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BF328A1D64572F007846A4 /* AsyncUdpSocket.m */; };
+		B7BF328E1D64584E007846A4 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF328D1D64584E007846A4 /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		B7BF32361D63078F007846A4 /* CocoaAsyncSocket_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaAsyncSocket_SwiftUITests.swift; sourceTree = "<group>"; };
 		B7BF32381D63078F007846A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7BF32441D6313B0007846A4 /* ClientVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientVC.swift; sourceTree = "<group>"; };
+		B7BF32861D64572E007846A4 /* CocoaAsyncSocket-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		B7BF32871D64572F007846A4 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		B7BF32881D64572F007846A4 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		B7BF32891D64572F007846A4 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		B7BF328A1D64572F007846A4 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		B7BF328D1D64584E007846A4 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		F4132C14A85131A9175CC976 /* Pods-CocoaAsyncSocket-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaAsyncSocket-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaAsyncSocket-Swift/Pods-CocoaAsyncSocket-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,9 +132,11 @@
 		B7BF32151D63078F007846A4 /* CocoaAsyncSocket-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				B7BF32851D64571F007846A4 /* AsyncSocket */,
 				B7BF32161D63078F007846A4 /* AppDelegate.swift */,
 				B7BF32181D63078F007846A4 /* ViewController.swift */,
 				B7BF32441D6313B0007846A4 /* ClientVC.swift */,
+				B7BF328D1D64584E007846A4 /* Singleton.swift */,
 				B7BF321A1D63078F007846A4 /* Main.storyboard */,
 				B7BF321D1D63078F007846A4 /* Assets.xcassets */,
 				B7BF321F1D63078F007846A4 /* LaunchScreen.storyboard */,
@@ -150,6 +161,18 @@
 				B7BF32381D63078F007846A4 /* Info.plist */,
 			);
 			path = "CocoaAsyncSocket-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		B7BF32851D64571F007846A4 /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				B7BF32871D64572F007846A4 /* AsyncSocket.h */,
+				B7BF32881D64572F007846A4 /* AsyncSocket.m */,
+				B7BF32891D64572F007846A4 /* AsyncUdpSocket.h */,
+				B7BF328A1D64572F007846A4 /* AsyncUdpSocket.m */,
+				B7BF32861D64572E007846A4 /* CocoaAsyncSocket-Swift-Bridging-Header.h */,
+			);
+			path = AsyncSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,8 +358,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7BF32191D63078F007846A4 /* ViewController.swift in Sources */,
+				B7BF328E1D64584E007846A4 /* Singleton.swift in Sources */,
+				B7BF328C1D64572F007846A4 /* AsyncUdpSocket.m in Sources */,
 				B7BF32171D63078F007846A4 /* AppDelegate.swift in Sources */,
 				B7BF32451D6313B0007846A4 /* ClientVC.swift in Sources */,
+				B7BF328B1D64572F007846A4 /* AsyncSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,11 +505,14 @@
 			baseConfigurationReference = F4132C14A85131A9175CC976 /* Pods-CocoaAsyncSocket-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "CocoaAsyncSocket-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JadeFor.CocoaAsyncSocket-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CocoaAsyncSocket-Swift/AsyncSocket/CocoaAsyncSocket-Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -492,11 +521,13 @@
 			baseConfigurationReference = 52BCE22B586D9DA487B0B0E6 /* Pods-CocoaAsyncSocket-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "CocoaAsyncSocket-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JadeFor.CocoaAsyncSocket-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CocoaAsyncSocket-Swift/AsyncSocket/CocoaAsyncSocket-Swift-Bridging-Header.h";
 			};
 			name = Release;
 		};

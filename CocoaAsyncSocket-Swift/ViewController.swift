@@ -81,8 +81,26 @@ class ViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var socketButton: UIButton!
     
     
+    //AsyncSocket 连接
+    @IBAction func socketAct(sender: AnyObject) {
+        
+        /**
+         设定Host
+         */
+        Singleton.instanceThird.socketHost = "10.203.1.24"
+        Singleton.instanceThird.socketPort = 8080;
+        
+        //在连接前先进性手动断开
+        Singleton.instanceThird.socket?.setUserData(SocketOffLineBy.SocketOffLineByUser.rawValue)
+        Singleton.instanceThird.cutoffSocket()
+        
+        //确保断开连接后在进行连接，因为 如果对一个处于连接状态的socket进行连接，会出现崩溃
+        Singleton.instanceThird.socket?.setUserData(SocketOffLineBy.SocketOffLineByServer.rawValue)
+        Singleton.instanceThird.socketConnectHost()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

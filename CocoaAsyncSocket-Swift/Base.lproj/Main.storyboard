@@ -83,6 +83,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgW-th-sW0">
+                                <rect key="frame" x="252" y="28" width="96" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="FDQ-Dp-ubu"/>
+                                    <constraint firstAttribute="height" constant="30" id="nop-rY-8f0"/>
+                                </constraints>
+                                <state key="normal" title="AsyncSocket"/>
+                                <connections>
+                                    <action selector="socketAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1yL-BG-ODe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -90,10 +101,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ZYE-Od-leR" secondAttribute="trailing" constant="55" id="5sS-gP-knd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l4V-ek-Qu7" secondAttribute="trailing" constant="-8" id="Gob-Yv-Svn"/>
                             <constraint firstItem="3kA-sk-nSt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="98" id="HFZ-Xp-LXv"/>
+                            <constraint firstItem="qgW-th-sW0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="232" id="KFu-V7-nkP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3kA-sk-nSt" secondAttribute="trailing" constant="-8" id="M0M-RM-cle"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vGC-Gv-jB2" secondAttribute="trailing" constant="55" id="UJd-Gp-lcf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZYE-Od-leR" secondAttribute="bottom" constant="32" id="WD8-7e-SZU"/>
                             <constraint firstItem="edS-gg-fU4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="WEL-bF-Wph"/>
+                            <constraint firstItem="qgW-th-sW0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ZV4-Ke-21V"/>
                             <constraint firstItem="vGC-Gv-jB2" firstAttribute="top" secondItem="Wkn-ga-MTg" secondAttribute="bottom" constant="31" id="cbm-bQ-GPe"/>
                             <constraint firstItem="ZYE-Od-leR" firstAttribute="top" secondItem="vGC-Gv-jB2" secondAttribute="bottom" constant="28" id="g9z-o3-NXq"/>
                             <constraint firstItem="Qoq-9z-zbB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gan-Co-11C"/>
@@ -111,6 +124,7 @@
                         <outlet property="infoTV" destination="ZYE-Od-leR" id="9DO-D5-OsE"/>
                         <outlet property="msgTF" destination="vGC-Gv-jB2" id="TQc-vf-o7I"/>
                         <outlet property="portTF" destination="Wkn-ga-MTg" id="mvP-tl-DWw"/>
+                        <outlet property="socketButton" destination="qgW-th-sW0" id="YfW-bC-BxC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
